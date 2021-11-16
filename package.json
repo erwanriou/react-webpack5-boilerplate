@@ -1,0 +1,52 @@
+{
+  "name": "react-webpack5-boilerplate",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "styled-components": "5.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.15.0",
+    "@babel/plugin-proposal-class-properties": "7.10.1",
+    "@babel/plugin-transform-modules-commonjs": "7.16.0",
+    "@babel/plugin-transform-runtime": "7.16.0",
+    "@babel/preset-env": "7.15.0",
+    "@babel/preset-react": "7.14.5",
+    "@babel/runtime": "7.16.0",
+    "babel-loader": "8.2.2",
+    "clean-webpack-plugin": "4.0.0",
+    "copy-webpack-plugin": "^9.0.1",
+    "cross-env": "7.0.3",
+    "css-loader": "^6.5.1",
+    "css-minimizer-webpack-plugin": "3.1.2",
+    "dotenv": "10.0.0",
+    "html-webpack-plugin": "5.3.2",
+    "mini-css-extract-plugin": "2.4.4",
+    "postcss-loader": "6.2.0",
+    "postcss-preset-env": "6.7.0",
+    "style-loader": "3.3.1",
+    "terser-webpack-plugin": "5.2.5",
+    "webpack": "5.62.1",
+    "webpack-cli": "4.9.0",
+    "webpack-dev-server": "4.4.0",
+    "webpack-merge": "5.8.0"
+  }
+}

@@ -1,0 +1,19 @@
+# SERVER IGNORE
+node_modules
+build
+src/test/examples
+src/test/videos
+src/test/screenshots
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+cypress.json
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.npmrc
+.prettierrc.yml
