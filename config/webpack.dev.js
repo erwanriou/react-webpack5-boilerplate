@@ -27,6 +27,7 @@ const devConfig = {
     open: true,
     compress: true,
     hot: true,
+    watchFiles: ["src/**/*.js"],
     proxy,
     port: 3000,
   },
