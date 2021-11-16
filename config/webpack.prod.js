@@ -1,11 +1,11 @@
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
-const TerserPlugin = require("terser-webpack-plugin")
-const { merge } = require("webpack-merge")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+const { merge } = require("webpack-merge");
 
 // IMPORT COMMON AND PATHS
-const paths = require("./paths")
-const common = require("./webpack.common.js")
+const paths = require("./paths");
+const common = require("./webpack.common.js");
 
 module.exports = merge(common, {
   mode: "production",
@@ -13,14 +13,14 @@ module.exports = merge(common, {
   output: {
     path: paths.build,
     publicPath: "/",
-    filename: "static/js/[name].[contenthash].bundle.js"
+    filename: "static/js/[name].[contenthash].bundle.js",
   },
   plugins: [
     // COMPRESS CSS
     new MiniCssExtractPlugin({
       filename: "static/css/[name].[contenthash].css",
-      chunkFilename: "[id].css"
-    })
+      chunkFilename: "[id].css",
+    }),
   ],
   module: {
     rules: [
@@ -32,12 +32,12 @@ module.exports = merge(common, {
             loader: "css-loader",
             options: {
               importLoaders: 2,
-              sourceMap: false
-            }
-          }
-        ]
-      }
-    ]
+              sourceMap: false,
+            },
+          },
+        ],
+      },
+    ],
   },
   optimization: {
     minimize: true,
@@ -52,26 +52,27 @@ module.exports = merge(common, {
       minSize: 40,
       automaticNameDelimiter: "-",
       cacheGroups: {
+        // CONFIGURE IN THIS REGEX THE LIBRARIES YOU WANT TO SEPARATE FROM YOUR MAIN BUNDLE
         vendors: {
           name: "react",
-          test: /[\\/]node_modules[\\/](react|react-dom|redux)[\\/]/,
-          chunks: "all"
+          test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+          chunks: "all",
         },
         styles: {
           name: "styles",
           test: /\.css$/,
           chunks: "all",
-          enforce: true
-        }
-      }
+          enforce: true,
+        },
+      },
     },
     runtimeChunk: {
-      name: "runtime"
-    }
+      name: "runtime",
+    },
   },
   performance: {
     hints: false,
     maxEntrypointSize: 512000,
-    maxAssetSize: 512000
-  }
-})
+    maxAssetSize: 512000,
+  },
+});
