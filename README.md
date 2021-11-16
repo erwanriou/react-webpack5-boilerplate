@@ -1,6 +1,6 @@
 # React boilerplate with webpack 5
 
-- Same folter structure with public as a **CRA** but simplified bundle and lighter build
+- Same folder structure with public as a **CRA** but simplified bundle and lighter build
 - development and production setups ready for a production release
 - Without vulnerabilities (so far)
 - Configured for alias (already `@components` implemented)
